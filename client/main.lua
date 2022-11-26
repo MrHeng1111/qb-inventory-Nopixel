@@ -19,9 +19,9 @@ local showBlur = true
 
 RegisterNUICallback('showBlur', function()
     Wait(50)
-    TriggerEvent("lj-inventory:client:showBlur")
+    TriggerEvent("qb-inventory:client:showBlur")
 end) 
-RegisterNetEvent("lj-inventory:client:showBlur", function()
+RegisterNetEvent("qb-inventory:client:showBlur", function()
     Wait(50)
     showBlur = not showBlur
 end)
@@ -326,10 +326,10 @@ end)
 
 RegisterNetEvent('inventory:client:OpenInventory', function(PlayerAmmo, inventory, other)
     if not IsEntityDead(PlayerPedId()) then
-        Wait(500)
+        Wait(50)
         ToggleHotbar(false)
         if showBlur == true then
-            TriggerScreenblurFadeIn(1000)
+            TriggerScreenblurFadeIn(100)
         end
         SetNuiFocus(true, true)
         if other then
